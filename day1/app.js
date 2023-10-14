@@ -55,15 +55,17 @@
 // })
 
 
-
-
-
-
-
-
+let thoitiet = document.getElementsByClassName("thoitiet")
 let diadiem = document.getElementById("diadiem")
 let btn = document.getElementById("btn")
 let nhietdo = document.getElementById("nhietdo")
+let imgdiv = document.querySelector(".image_temperature");
+let img = document.createElement("img");
+let date = document.getElementById("current_date")
+let time_clock = document.getElementById("current_clock")
+
+img.scr = "";
+imgdiv.appendChild(img);
 btn.addEventListener("click", function () {
   fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${diadiem.value}`)
     .then(function (response) {
@@ -83,20 +85,39 @@ btn.addEventListener("click", function () {
           return response.json();
         })
         .then(function (data_weather) {
-          console.log(data_weather.current_weather.weathercode);
-          console.log(data_weather.current_weather.temperature);
+          console.log(data_weather);
+          // console.log(data_weather.current_weather.weathercode);
+          // console.log(data_weather.current_weather.temperature);
           nhietdo.innerText = data_weather.current_weather.temperature;
 
-          let img_div = document.getElementsByClassName("img");
-          let img = document.createElement("img");
-          if (data_weather.current_weather.weathercode < 4) {
-            img.src = "troinang.jpg"
-          }if (data_weather.current_weather.weathercode) {
-            
-          } else {
-            
+          let weather_code = data_weather.current_weather.weathercode;
+          console.log(weather_code);
+          if (weather_code >= 0 && weather_code <= 3) {
+            img.src = "troinang.jpg";
+          } else if (weather_code >= 45 && weather_code < 77) {
+            img.src = "troimua.jpg";
+          } else if (weather_code >= 77 && weather_code < 99) {
+            img.src = "troisam.jpg";
           }
-          img_div.appendChild(img)
+
+
+
+          let time = data_weather.current_weather.time;
+          let data_date = time.split("T");
+          console.log(data_date);
+          date.innerText = data_date[0]
+          time_clock.innerText = data_date[1]
+          let hour = data_date[1].split(":")
+          console.log(hour);
+          if (hour[0]<16 ) {
+            thoitiet[0].style.background= "yellow"
+          }else{
+            thoitiet[0].style.background= "#333"
+
+          }
+
+
+          console.log(data_weather.current_weather.temperature);
 
         });
 
@@ -104,8 +125,50 @@ btn.addEventListener("click", function () {
 
 
 })
+ 
+// let input_search_address = document.getElementById("search_weather");
+// let search_button = document.querySelector("button");
+// let temperature = document.getElementById("temperature");
+// let img = document.querySelector(".image_temperature img");
 
+// search_button.addEventListener("click", function () {
+//   fetch(
+//     `https://geocoding-api.open-meteo.com/v1/search?name=${input_search_address.value}`
+//   )
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       // console.log(data);
+//       // console.log(data.results[0].latitude);
+//       // console.log(data.results[0].longitude);
 
+//       let latitude = data.results[0].latitude;
+//       let longitude = data.results[0].longitude;
+
+//       fetch(
+//         `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
+//       )
+//         .then(function (response) {
+//           return response.json();
+//         })
+//         .then(function (data_weather) {
+//           console.log(data_weather);
+//           let weather_code = data_weather.current_weather.weathercode;
+//           console.log(weather_code);
+//           if (weather_code >= 0 && weather_code <= 3) {
+//             img.src = "./sun.png";
+//           } else if (weather_code >= 45 && weather_code < 77) {
+//             img.src = "./rain.png";
+//           } else if (weather_code >= 77 && weather_code < 99) {
+//             img.src = "./thunder.png";
+//           }
+
+//           temperature.innerText = data_weather.current_weather.temperature;
+//           console.log(data_weather.current_weather.temperature);
+//         });
+//     });
+// });
 
 
 
