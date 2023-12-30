@@ -101,6 +101,9 @@ button{
         display: block;
     }
 }
+.thoitiet_container{
+  display: none;
+}
 
 
 .profile{

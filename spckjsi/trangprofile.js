@@ -1,37 +1,3 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
-import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyCHTX9PICGa9BvmJrKLWylnWx_5DkQyVYg",
-    authDomain: "login-signup-8261f.firebaseapp.com",
-    databaseURL: "https://login-signup-8261f-default-rtdb.firebaseio.com",
-    projectId: "login-signup-8261f",
-    storageBucket: "login-signup-8261f.appspot.com",
-    messagingSenderId: "258781867368",
-    appId: "1:258781867368:web:50a9f4c101f429dc9e3add",
-    measurementId: "G-NXEQME3YY6"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-
-
-
-
-
-
 let input_img = document.getElementById("img")
 let input_name = document.getElementById("username")
 let input_age = document.getElementById("userage")
@@ -46,24 +12,64 @@ let school_work = document.getElementById("truong")
 let description = document.getElementById("mota")
 let profile = document.querySelector(".profile")
 
-// input_img.addEventListener("change", function(){
-//     var file    = document.querySelector('input[type=file]').files[0];
-//     var reader  = new FileReader();
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js";
+import {
+  getDatabase,
+  ref as dbRef,
+  push,
+  onValue,
+} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
 
-//     reader.onloadend = function () {
-//         console.log(reader.result);
-//       profile.style.backgroundImage = `url("${reader.result}")`;
-//     }
+var downloadURL = ""
 
-// })
-// // profile.style.backgroundImage = "url(./anh/anhgai.webp)" 
+const firebaseConfig = {
+    apiKey: "AIzaSyAn2PIngNGKYtZ67FQSQ_Tke-pCbmv_Ltc",
+    authDomain: "login-jsi22-857e1.firebaseapp.com",
+    databaseURL: "https://login-jsi22-857e1-default-rtdb.firebaseio.com",
+    projectId: "login-jsi22-857e1",
+    storageBucket: "login-jsi22-857e1.appspot.com",
+    messagingSenderId: "355016064969",
+    appId: "1:355016064969:web:2e2a853b04dc847e5b3218",
+    measurementId: "G-JKNQ55410B"
+  };
 
-// console.log(input_img.value);
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
+const database = getDatabase(app);
 
-input_img.onchange = function () {
-    profile.style.backgroundImage = `url("${URL.createObjectURL(input_img.files[0])}")`;
-    console.log(URL.createObjectURL(input_img.files[0]));
-}
+// const fileInput = document.getElementById("fileInput"); // Input element for file selection
+
+input_img.addEventListener("change", async function (e) {
+  const file = e.target.files[0]; // Get the selected file
+
+  // Create a storage reference
+  const storageRef = ref(storage, "images/" + file.name);
+
+  try {
+    // Upload file to Firebase Storage
+    const snapshot = await uploadBytes(storageRef, file);
+
+    // Get the download URL after successful upload
+    downloadURL = await getDownloadURL(snapshot.ref);
+    
+    profile.style.backgroundImage = `url("${downloadURL}")`
+
+    // Store downloadURL in Firebase Database for retrieval
+    const dbImagesRef = dbRef(database, "images");
+    push(dbImagesRef, {
+      imageURL: downloadURL,
+    });
+  } catch (error) {
+    // Handle any errors while uploading
+    console.error(error);
+  }
+});
 
 input_name.addEventListener("keyup", function () {
 
@@ -105,9 +111,7 @@ btn.addEventListener('click', function () {
                 place: input_place.value,
                 school_work: input_school_work.value,
                 description: input_description.value,
-                img : URL.createObjectURL(input_img.files[0])
-
-
+                img : downloadURL
             })
             localStorage.setItem("profiles", JSON.stringify(list_profile_from_localstrorage))
             alert("cap nhat tai khoan thanh cong")

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>trangchu</title>
-    <link rel="stylesheet" href="trangchu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>trangchu</title>
+        <link rel="stylesheet" href="trangchu.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script defer src="trangchu.js"></script>
 
 </head>
 
@@ -28,6 +29,15 @@
             <button class="log-in" id="login_btn">Log In</button>
             <button class="log-out" id="logout_btn">Log Out</button>
         </div>
+        <div class="thoi_tiet">
+            <i class="fa-solid fa-cloud" id="may"></i>
+            <div class="thoitiet_container">
+                <i class="fa-solid fa-sun" id="nang"></i>
+                <i class="fa-solid fa-cloud-rain" id="mua"></i>
+                <h1 id="nhietdo"></h1>
+            </div>
+
+        </div>
         <div class="menu-btn">
             <i class="fa fa-bars fa-solid"></i>
         </div>
@@ -35,7 +45,7 @@
 
 
     <div class="profile_container">
-        <div class="profile">
+        <div class="profile" style="background-image: url();">
             <div class="description_profile">
                 <div class="dong1">
                     <h1>Ha Anh</h1>
@@ -59,13 +69,7 @@
 
                 <button class="btn btn_x" id="x"><i class="fa-solid fa-x"></i></button>
                 <button class="btn btn_tim" id="tim"><i class="fa-solid fa-heart"></i></button>
-
-
-
             </div>
-
-
-
         </div>
         <div class="profile">
             <div class="description_profile">
@@ -95,9 +99,6 @@
 
 
             </div>
-
-
-
         </div>
         <div class="profile">
             <div class="description_profile">
@@ -177,7 +178,6 @@
     </section>
 
 
-    <script src="trangchu.js"></script>
     <script src="currentuser.js"></script>
 </body>
 
