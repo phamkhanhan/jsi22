@@ -1,184 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>trangchu</title>
-        <link rel="stylesheet" href="trangchu.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <script defer src="trangchu.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trangchu</title>
+    <link rel="stylesheet" href="trangchu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script defer src="trangchu1.js"></script>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <nav class="navbar">
-        <div class="logo">
-            <i class="fa-solid fa-heart" style="color: #005eff;"></i>
-            <a href="">Titder</a>
+      <div class="logo">
+        <i class="fa-solid fa-heart" style="color: #005eff"></i>
+        <a href="">Titder</a>
+      </div>
+      <div class="menu">
+        <div class="menu-links">
+          <a href="trangchu.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="trangprofile.html">Profile</a>
+          <a><span id="ten"></span></a>
         </div>
-        <div class="menu">
-            <div class="menu-links">
-                <a href="trangchu.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="trangprofile.html">Profile</a>
-                <a><span id="ten"></span></a>
-            </div>
-            <button class="log-in" id="login_btn">Log In</button>
-            <button class="log-out" id="logout_btn">Log Out</button>
+        <button class="log-in" id="login_btn">Log In</button>
+        <button class="log-out" id="logout_btn">Log Out</button>
+      </div>
+      <div class="thoi_tiet">
+        <i class="fa-solid fa-cloud" id="may"></i>
+        <div class="thoitiet_container">
+          <i class="fa-solid fa-sun" id="nang"></i>
+          <i class="fa-solid fa-cloud-rain" id="mua"></i>
+          <h1 id="nhietdo"></h1>
         </div>
-        <div class="thoi_tiet">
-            <i class="fa-solid fa-cloud" id="may"></i>
-            <div class="thoitiet_container">
-                <i class="fa-solid fa-sun" id="nang"></i>
-                <i class="fa-solid fa-cloud-rain" id="mua"></i>
-                <h1 id="nhietdo"></h1>
-            </div>
-
-        </div>
-        <div class="menu-btn">
-            <i class="fa fa-bars fa-solid"></i>
-        </div>
+      </div>
+      <div class="menu-btn">
+        <i class="fa fa-bars fa-solid"></i>
+      </div>
     </nav>
 
-
     <div class="profile_container">
-        <div class="profile" style="background-image: url();">
-            <div class="description_profile">
-                <div class="dong1">
-                    <h1>Ha Anh</h1>
-                    <h1>18</h1>
-                </div>
-                <div>
-                    <span><i class="fa-solid fa-location-dot" style="color: #005eff;"></i> <span>Ha Noi</span> </span>
-                </div>
-                <div>
-                    <span> <i class="fa-solid fa-graduation-cap" style="color: #005eff;"></i><span>Truong Gi
-                            Do</span></span>
-                </div>
-                <div>
-                    <span><i class="fa-solid fa-map-pin" style="color: #005eff;"></i><span>2km</span></span>
-                </div>
-                <div>
-                    <p>1 cau noi gi day Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam eos
-                        fugit dolore tempore atque modi doloribus, soluta illum cupiditate quis minus! </p>
-                </div>
-                <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+      <div class="profile" style="background-image: url()">
+        <div class="description_profile">
+          <div class="dong1">
+            <h1>Ha Anh</h1>
+            <h1>18</h1>
+          </div>
+          <div>
+            <span
+              ><i class="fa-solid fa-location-dot" style="color: #005eff"></i>
+              <span>Ha Noi</span>
+            </span>
+          </div>
+          <div>
+            <span>
+              <i class="fa-solid fa-graduation-cap" style="color: #005eff"></i
+              ><span>Truong Gi Do</span></span
+            >
+          </div>
+          <div>
+            <span
+              ><i class="fa-solid fa-map-pin" style="color: #005eff"></i
+              ><span>2km</span></span
+            >
+          </div>
+          <div>
+            <p>
+              1 cau noi gi day Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Natus laboriosam eos fugit dolore tempore atque
+              modi doloribus, soluta illum cupiditate quis minus!
+            </p>
+          </div>
+          <script src="https://use.fontawesome.com/fe459689b4.js"></script>
 
-                <button class="btn btn_x" id="x"><i class="fa-solid fa-x"></i></button>
-                <button class="btn btn_tim" id="tim"><i class="fa-solid fa-heart"></i></button>
-            </div>
+          <button class="btn btn_x" id="x">
+            <i class="fa-solid fa-x"></i>
+          </button>
+          <button class="btn btn_tim" id="tim">
+            <i class="fa-solid fa-heart"></i>
+          </button>
         </div>
-        <div class="profile">
-            <div class="description_profile">
-                <div class="dong1">
-                    <h1>Chau Anh</h1>
-                    <h1>18</h1>
-                </div>
-                <div>
-                    <span><i class="fa-solid fa-location-dot" style="color: #005eff;"></i> <span>Ha Noi</span> </span>
-                </div>
-                <div>
-                    <span> <i class="fa-solid fa-graduation-cap" style="color: #005eff;"></i><span>Truong Gi
-                            Do</span></span>
-                </div>
-                <div>
-                    <span><i class="fa-solid fa-map-pin" style="color: #005eff;"></i><span>2km</span></span>
-                </div>
-                <div>
-                    <p>1 cau noi gi day Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam eos
-                        fugit dolore tempore atque modi doloribus, soluta illum cupiditate quis minus! </p>
-                </div>
-                <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+      </div>
+      <div class="profile">
+        <div class="description_profile">
+          <div class="dong1">
+            <h1>Chau Anh</h1>
+            <h1>18</h1>
+          </div>
+          <div>
+            <span
+              ><i class="fa-solid fa-location-dot" style="color: #005eff"></i>
+              <span>Ha Noi</span>
+            </span>
+          </div>
+          <div>
+            <span>
+              <i class="fa-solid fa-graduation-cap" style="color: #005eff"></i
+              ><span>Truong Gi Do</span></span
+            >
+          </div>
+          <div>
+            <span
+              ><i class="fa-solid fa-map-pin" style="color: #005eff"></i
+              ><span>2km</span></span
+            >
+          </div>
+          <div>
+            <p>
+              1 cau noi gi day Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Natus laboriosam eos fugit dolore tempore atque
+              modi doloribus, soluta illum cupiditate quis minus!
+            </p>
+          </div>
+          <script src="https://use.fontawesome.com/fe459689b4.js"></script>
 
-                <button class="btn btn_x" id="x"><i class="fa-solid fa-x"></i></button>
-                <button class="btn btn_tim " id="tim"><i class="fa-solid fa-heart"></i></button>
-
-
-
-            </div>
+          <button class="btn btn_x" id="x">
+            <i class="fa-solid fa-x"></i>
+          </button>
+          <button class="btn btn_tim" id="tim">
+            <i class="fa-solid fa-heart"></i>
+          </button>
         </div>
-        <div class="profile">
-            <div class="description_profile">
-                <div class="dong1">
-                    <h1>Chau Ha</h1>
-                    <h1>18</h1>
-                </div>
-                <div>
-                    <span><i class="fa-solid fa-location-dot" style="color: #005eff;"></i> <span>Ha Noi</span> </span>
-                </div>
-                <div>
-                    <span> <i class="fa-solid fa-graduation-cap" style="color: #005eff;"></i><span>Truong Gi
-                            Do</span></span>
-                </div>
-                <div>
-                    <span><i class="fa-solid fa-map-pin" style="color: #005eff;"></i><span>2km</span></span>
-                </div>
-                <div>
-                    <p>1 cau noi gi day Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam eos
-                        fugit dolore tempore atque modi doloribus, soluta illum cupiditate quis minus! </p>
-                </div>
-                <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+      </div>
+      <div class="profile">
+        <div class="description_profile">
+          <div class="dong1">
+            <h1>Chau Ha</h1>
+            <h1>18</h1>
+          </div>
+          <div>
+            <span
+              ><i class="fa-solid fa-location-dot" style="color: #005eff"></i>
+              <span>Ha Noi</span>
+            </span>
+          </div>
+          <div>
+            <span>
+              <i class="fa-solid fa-graduation-cap" style="color: #005eff"></i
+              ><span>Truong Gi Do</span></span
+            >
+          </div>
+          <div>
+            <span
+              ><i class="fa-solid fa-map-pin" style="color: #005eff"></i
+              ><span>2km</span></span
+            >
+          </div>
+          <div>
+            <p>
+              1 cau noi gi day Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Natus laboriosam eos fugit dolore tempore atque
+              modi doloribus, soluta illum cupiditate quis minus!
+            </p>
+          </div>
+          <script src="https://use.fontawesome.com/fe459689b4.js"></script>
 
-                <button class="btn btn_x" id="x"><i class="fa-solid fa-x"></i></button>
-                <button class="btn btn_tim" id="tim"><i class="fa-solid fa-heart"></i></button>
-
-
-
-            </div>
-
-
-
+          <button class="btn btn_x" id="x">
+            <i class="fa-solid fa-x"></i>
+          </button>
+          <button class="btn btn_tim" id="tim">
+            <i class="fa-solid fa-heart"></i>
+          </button>
         </div>
+      </div>
     </div>
 
-
     <section id="footer">
-        <div class="main-footer">
-            <div class="logoinfo" data-aos="fade-up">
-                <h2>Titder</h2>
-                <p>By Khanh An</p>
+      <div class="main-footer">
+        <div class="logoinfo" data-aos="fade-up">
+          <h2>Titder</h2>
+          <p>By Khanh An</p>
 
-                <div class="contact-details">
-                    <h1>Contact Us</h1>
-                    <li>
-                        <div class="fa fa-phone"></div><a href="tel:+919326048690">+94 0934652876</a>
-                    </li>
-                    <li>
-                        <div class="fa fa-envelope"></div><a
-                            href="mailto:yourmail@gmail.com">phamkhanhan2607@gmail.com</a>
-                    </li>
-                    </li>
-                </div>
-            </div>
-            <div class="com " data-aos="fade-up">
-                <h1>About</h1>
-                <ul>
-                    <li><a href="trangchu.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="trangprofile.html">Profile</a></li>
-                </ul>
-            </div>
-            <div class="info" data-aos="fade-up">
-                <h1>Social Media</h1>
-                <div class="sociallogos">
-                    <div class="logobox">
-                        <i class="fa-brands fa-instagram" style="color: #005eff;"></i>
-                        <i class="fa-brands fa-tiktok" style="color: #005eff;"></i>
-                        <i class="fa-brands fa-facebook" style="color: #005eff;"></i>
-                        <i class="fa-brands fa-youtube" style="color: #005eff;"></i>
-                    </div>
-                </div>
-            </div>
+          <div class="contact-details">
+            <h1>Contact Us</h1>
+            <li>
+              <div class="fa fa-phone"></div>
+              <a href="tel:+919326048690">+94 0934652876</a>
+            </li>
+            <li>
+              <div class="fa fa-envelope"></div>
+              <a href="mailto:yourmail@gmail.com">phamkhanhan2607@gmail.com</a>
+            </li>
+          </div>
         </div>
-        <footer>© Your Copyright 2023 All Rights Reserved</footer>
+        <div class="com" data-aos="fade-up">
+          <h1>About</h1>
+          <ul>
+            <li><a href="trangchu.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="trangprofile.html">Profile</a></li>
+          </ul>
+        </div>
+        <div class="info" data-aos="fade-up">
+          <h1>Social Media</h1>
+          <div class="sociallogos">
+            <div class="logobox">
+              <i class="fa-brands fa-instagram" style="color: #005eff"></i>
+              <i class="fa-brands fa-tiktok" style="color: #005eff"></i>
+              <i class="fa-brands fa-facebook" style="color: #005eff"></i>
+              <i class="fa-brands fa-youtube" style="color: #005eff"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>© Your Copyright 2023 All Rights Reserved</footer>
     </section>
-
-
     <script src="currentuser.js"></script>
-</body>
-
+    <script src="./trangchu.js"></script>
+  </body>
 </html>
